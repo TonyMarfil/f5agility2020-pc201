@@ -91,7 +91,7 @@ resource "aws_eip" "bigip2_traffic" {
   associate_with_private_ip = var.bigip2_private_ip[0]
 }
 
-resource "aws_eip" "virutal_server01" {
+resource "aws_eip" "virtual_server01" {
   vpc                       = true
   network_interface         = aws_network_interface.bigip1_traffic.id
   associate_with_private_ip = var.bigip1_private_ip[1]
@@ -102,19 +102,19 @@ resource "aws_eip" "virutal_server01" {
 }
 
 /*
-resource "aws_eip" "virutal_server02" {
+resource "aws_eip" "virtual_server02" {
   vpc                       = true
   network_interface         = aws_network_interface.bigip1_traffic.id
   associate_with_private_ip = var.bigip1_private_ip[2]
 }
 
-resource "aws_eip" "virutal_server03" {
+resource "aws_eip" "virtual_server03" {
   vpc                       = true
   network_interface         = aws_network_interface.bigip1_traffic.id
   associate_with_private_ip = var.bigip1_private_ip[3]
 }
 
-resource "aws_eip" "virutal_server04" {
+resource "aws_eip" "virtual_server04" {
   vpc                       = true
   network_interface         = aws_network_interface.bigip1_traffic.id
   associate_with_private_ip = var.bigip1_private_ip[4]

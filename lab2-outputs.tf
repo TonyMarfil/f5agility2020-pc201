@@ -22,17 +22,6 @@ output "bigip2_traffic-self" {
 output "f5_ami" {
   value = data.aws_ami.f5.id
 }
-output "virutal_server01_elastic_ip" {
-  value = aws_eip.virutal_server01.public_ip
+output "virtual_server01_elastic_ip" {
+  value = aws_eip.virtual_server01.public_ip
 }
-/*
-output "virutal_server02_elastic_ip" {
-  value = aws_eip.virutal_server02.public_ip
-}
-output "virutal_server03_elastic_ip" {
-  value = aws_eip.virutal_server03.public_ip
-}
-output "virutal_server04_elastic_ip" {
-  value = aws_eip.virutal_server04.public_ip
-}
-*/
