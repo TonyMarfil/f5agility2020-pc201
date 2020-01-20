@@ -13,9 +13,6 @@ output "bigip2_private_mgmt_address" {
 output "bigip1_traffic-self" {
   value = aws_network_interface.bigip1_traffic.private_ips
 }
-output "bigip1_traffic-self_indexed" {
-  value = var.bigip1_private_ip[0]
-}
 output "bigip2_traffic-self" {
   value = aws_network_interface.bigip2_traffic.private_ips
 }
