@@ -19,3 +19,10 @@ sed -i 's/\\n/\\\\n/g' example01b.f5lab.dev.key
 sed -i 's/\\n/\\\\n/g' example01b.f5lab.dev.cert
 
 rm example*.tmp*
+if [ $? -eq 0 ]
+then
+  echo "The script ran ok"
+else
+  echo "The script failed" >&2
+fi
+

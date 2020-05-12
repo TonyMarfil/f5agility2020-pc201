@@ -9,3 +9,11 @@ do
 mv $i $(echo $i | sed -e "s/.zzz//")
  # do something on $i
 done
+
+if [ $? -eq 0 ]
+then
+  echo "The script ran ok"
+else
+  echo "The script failed" >&2
+fi
+
