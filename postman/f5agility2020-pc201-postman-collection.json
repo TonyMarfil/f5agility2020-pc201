@@ -321,7 +321,7 @@
 					"response": []
 				},
 				{
-					"name": "Step 8: REST API - Create LOCAL_ONLY Partition - BIGIP2",
+					"name": "Step 7: REST API - Create LOCAL_ONLY Partition - BIGIP2",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -372,7 +372,7 @@
 					"response": []
 				},
 				{
-					"name": "Step7: REST API - Create default route - BIGIP2",
+					"name": "Step8: REST API - Create default route - BIGIP2",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -795,7 +795,7 @@
 					"response": []
 				},
 				{
-					"name": "Step 6: Create AS3 - Example01/example01 ECDSA Cert",
+					"name": "SKIP THIS STEP. BROKE WITH UPGRADE TO 15.1 - Step 6: Create AS3 - Example01/example01 ECDSA Cert",
 					"request": {
 						"auth": {
 							"type": "basic",
