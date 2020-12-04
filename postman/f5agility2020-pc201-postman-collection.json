@@ -795,7 +795,7 @@
 					"response": []
 				},
 				{
-					"name": "SKIP THIS STEP. BROKE WITH UPGRADE TO 15.1 - Step 6: Create AS3 - Example01/example01 ECDSA Cert",
+					"name": "Step 6: Create AS3 - Example01/example01 ECDSA Cert",
 					"request": {
 						"auth": {
 							"type": "basic",
