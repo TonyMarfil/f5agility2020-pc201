@@ -6,6 +6,879 @@
 	},
 	"item": [
 		{
+			"name": "Lab3.1 - Install iLX Packages",
+			"item": [
+				{
+					"name": "Upload and Install to BIG-IP1",
+					"item": [
+						{
+							"name": "Step 1: REST API - Upload DO iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{do_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install DO iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-declarative-onboarding-1.18.0-4.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Upload AS3 iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{as3_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install AS3 iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-appsvcs-3.25.0-3.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Upload CFE iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{cfe_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install CFE iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-cloud-failover-1.7.1-1.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Upload TS iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{ts_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install TS iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-telemetry-1.17.0-4.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.collectionVariables.set(\"bigip_mgmt_ip\", pm.environment.get(\"bigip1_mgmt_ip\"));"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Upload and Install to BIG-IP2",
+					"item": [
+						{
+							"name": "Step 1: REST API - Upload DO iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{do_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install DO iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-declarative-onboarding-1.18.0-4.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Upload AS3 iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{as3_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install AS3 iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-appsvcs-3.25.0-3.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Upload CFE iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{cfe_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install CFE iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-cloud-failover-1.7.1-1.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Upload TS iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"command\": \"run\", \"utilCmdArgs\": \"-c \\\"cd /var/config/rest/downloads/ && curl -sk -LJO {{ts_url}}\\\"\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/tm/util/bash",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"tm",
+										"util",
+										"bash"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Step 1: REST API - Install TS iLX Package",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{bigip_admin_password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "showPassword",
+											"value": false,
+											"type": "boolean"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"operation\":\"INSTALL\",\"packageFilePath\":\"/var/config/rest/downloads/f5-telemetry-1.17.0-4.noarch.rpm\"\n}"
+								},
+								"url": {
+									"raw": "https://{{bigip_mgmt_ip}}/mgmt/shared/iapp/package-management-tasks",
+									"protocol": "https",
+									"host": [
+										"{{bigip_mgmt_ip}}"
+									],
+									"path": [
+										"mgmt",
+										"shared",
+										"iapp",
+										"package-management-tasks"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.collectionVariables.set(\"bigip_mgmt_ip\", pm.environment.get(\"bigip2_mgmt_ip\"));"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Lab 4.1 - Declarative Onboarding - Basic Plumbing",
 			"item": [
 				{
@@ -1771,6 +2644,48 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "do_url",
+			"value": "https://github.com/F5Networks/f5-declarative-onboarding/releases/download/v1.18.0/f5-declarative-onboarding-1.18.0-4.noarch.rpm"
+		},
+		{
+			"key": "as3_url",
+			"value": "https://github.com/F5Networks/f5-appsvcs-extension/releases/download/v3.25.0/f5-appsvcs-3.25.0-3.noarch.rpm"
+		},
+		{
+			"key": "cfe_url",
+			"value": "https://github.com/F5Networks/f5-cloud-failover-extension/releases/download/v1.7.1/f5-cloud-failover-1.7.1-1.noarch.rpm"
+		},
+		{
+			"key": "ts_url",
+			"value": "https://github.com/F5Networks/f5-telemetry-streaming/releases/download/v1.17.0/f5-telemetry-1.17.0-4.noarch.rpm"
+		},
+		{
+			"key": "bigip_mgmt_ip",
+			"value": ""
 		}
 	]
 }
