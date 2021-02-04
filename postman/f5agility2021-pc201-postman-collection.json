@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "236ea261-87c8-4418-9f85-f24302e1af1a",
+		"_postman_id": "9a89b6bb-6d7b-459a-86d7-92a471e2d52d",
 		"name": "F5 Agility 2021 PC201 Lab",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -63,7 +63,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install DO iLX Package",
+							"name": "Step 2: REST API - Install DO iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -114,7 +114,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Upload AS3 iLX Package",
+							"name": "Step 3: REST API - Upload AS3 iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -165,7 +165,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install AS3 iLX Package",
+							"name": "Step 4: REST API - Install AS3 iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -216,7 +216,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Upload CFE iLX Package",
+							"name": "Step 5: REST API - Upload CFE iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -267,7 +267,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install CFE iLX Package",
+							"name": "Step 6: REST API - Install CFE iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -318,7 +318,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Upload TS iLX Package",
+							"name": "Step 7: REST API - Upload TS iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -369,7 +369,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install TS iLX Package",
+							"name": "Step 8: REST API - Install TS iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -497,7 +497,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install DO iLX Package",
+							"name": "Step 2: REST API - Install DO iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -548,7 +548,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Upload AS3 iLX Package",
+							"name": "Step 3: REST API - Upload AS3 iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -599,7 +599,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install AS3 iLX Package",
+							"name": "Step 4: REST API - Install AS3 iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -650,7 +650,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Upload CFE iLX Package",
+							"name": "Step 5: REST API - Upload CFE iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -701,7 +701,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install CFE iLX Package",
+							"name": "Step 6: REST API - Install CFE iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -752,7 +752,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Upload TS iLX Package",
+							"name": "Step 7: REST API - Upload TS iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -803,7 +803,7 @@
 							"response": []
 						},
 						{
-							"name": "Step 1: REST API - Install TS iLX Package",
+							"name": "Step 8: REST API - Install TS iLX Package",
 							"request": {
 								"auth": {
 									"type": "basic",
