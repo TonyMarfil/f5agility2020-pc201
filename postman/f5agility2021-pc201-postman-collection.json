@@ -1735,7 +1735,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"class\": \"Cloud_Failover\",\n    \"environment\": \"aws\",\n    \"externalStorage\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"mydeployment\"\n        }\n    },\n    \"failoverAddresses\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"example01\"\n        }\n    },\n    \"failoverRoutes\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"mydeployment\"\n        },\n        \"scopingAddressRanges\": [\n            \"10.0.1.0/24\"\n        ]\n    }\n}"
+							"raw": "{\n    \"class\": \"Cloud_Failover\",\n    \"environment\": \"aws\",\n    \"externalStorage\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"mydeployment\"\n        }\n    },\n    \"failoverAddresses\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"example01\"\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "https://{{bigip1_mgmt_ip}}/mgmt/shared/cloud-failover/declare",
@@ -1786,7 +1786,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"class\": \"Cloud_Failover\",\n    \"environment\": \"aws\",\n    \"externalStorage\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"mydeployment\"\n        }\n    },\n    \"failoverAddresses\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"example01\"\n        }\n    },\n    \"failoverRoutes\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"mydeployment\"\n        },\n        \"scopingAddressRanges\": [\n            \"10.0.1.0/24\"\n        ]\n    }\n}"
+							"raw": "{\n    \"class\": \"Cloud_Failover\",\n    \"environment\": \"aws\",\n    \"externalStorage\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"mydeployment\"\n        }\n    },\n    \"failoverAddresses\": {\n        \"scopingTags\": {\n            \"f5_cloud_failover_label\": \"example01\"\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "https://{{bigip2_mgmt_ip}}/mgmt/shared/cloud-failover/declare",
