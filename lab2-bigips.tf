@@ -15,7 +15,8 @@ data "aws_ami" "f5" {
 
   filter {
     name   = "name"
-    values = ["*BIGIP-16.0.1.1-0.0.6*3e567b08-20a9-444f-a72a-7e8da3c2cbdf*"]
+    values = ["*BIGIP-16.0.1.1-0.0.6*3c272b55-0405-4478-a772-d0402ccf13f9*"]
+    # values = ["*BIGIP-16.0.1.1-0.0.6*3e567b08-20a9-444f-a72a-7e8da3c2cbdf*"]
     # values = ["*BIGIP-15.1.2.1-0.0.10*3e567b08-20a9-444f-a72a-7e8da3c2cbdf*"]
     # values = ["*BIGIP-15.1.2-0.0.9*3196aead-f3ab-4f8e-b6a1-0955337224c5*"]
     # values = ["*BIGIP-15.1.0.4-0.0.6*3196aead-f3ab-4f8e-b6a1-0955337224c5*"]
