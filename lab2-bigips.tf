@@ -6,7 +6,10 @@ local = "~> 1.2"
 }
 }
 
-
+/*
+  aws ec2 describe-images --region us-west-2 --filters Name=name,Values=*BIGIP-15.1.2.1*25Mbps* | jq '.Images[] |.ImageId, .Name'
+*/
+  
 data "aws_ami" "f5" {
   most_recent = true
 
